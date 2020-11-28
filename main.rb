@@ -17,7 +17,7 @@ end
 def calc_bill bill
   total_before_discount = 0
   total_after_discount = 0
-  cart.each do |arr|
+  bill.each do |arr|
     total_after_discount += arr[2]
     total_before_discount += $price_list[arr[0]]["unit_price"] * arr[1]
   end
