@@ -1,6 +1,4 @@
-@require_relative "price"
-
-$price_list = PriceTable.new.price_list
+@require_relative "item"
 
 def main
   puts 'enter the list of items seperated by a comma'
