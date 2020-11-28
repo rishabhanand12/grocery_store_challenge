@@ -14,12 +14,21 @@ def createCheckOutBill(cart)
   items_in_cart
 end
 
+def createTable bill
+  table = Terminal::Table.new
+  table.title = 'Bill'
+  table.headings = ['Item', 'Quantity' 'Price']
+  table.rows = cart
+  puts table
+end
+
 def main
   puts 'enter the list of items seperated by a comma'
   list = gets.chomp.downcase.gsub(/\s+/, '').split(',')
   cart = {}
   list.each { |item| createItemList item, cart }
   checkOutBill = createCheckOutBill cart
+  createTable checkOutBill
 end
 
 main 
