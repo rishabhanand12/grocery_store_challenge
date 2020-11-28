@@ -1,4 +1,4 @@
-class Cart
+class Item
   def initialize(item, qty)
     @item = item
     @qty = qty
