@@ -1,3 +1,4 @@
+require 'terminal-table'
 @require_relative "item"
 
 def createCheckOutBill(cart)
@@ -9,7 +10,7 @@ def createCheckOutBill(cart)
     #             'qty' => qty,
     #             'price' => newItem.calc_price
     #           })
-    items_in_cart.push([item, qty, newItem.calc_price])
+    items_in_cart.push([item, qty, newItem.calc_price.round(2)])
   end
   items_in_cart
 end
@@ -17,8 +18,8 @@ end
 def createTable bill
   table = Terminal::Table.new
   table.title = 'Bill'
-  table.headings = ['Item', 'Quantity' 'Price']
-  table.rows = cart
+  table.headings = ['Item', 'Quantity', 'Price']
+  table.rows = bill
   puts table
 end
 
