@@ -14,13 +14,16 @@ def createCheckOutBill(cart)
   items_in_cart
 end
 
-def createTable bill
-  table = Terminal::Table.new
-  table.title = 'Bill'
-  table.headings = ['Item', 'Quantity' 'Price']
-  table.rows = cart
-  puts table
-end
+def calc_bill bill
+  total_before_discount = 0
+  total_after_discount = 0
+  cart.each do |arr|
+    total_after_discount += arr[2]
+    total_before_discount += $price_list[arr[0]]["unit_price"] * arr[1]
+  end
+  puts "Total price : $#{total_after_discount.round(2)}"
+  puts "You saved $#{(total_before_discount-total_after_discount).round(2)} today"
+end 
 
 def main
   puts 'enter the list of items seperated by a comma'
@@ -28,7 +31,7 @@ def main
   cart = {}
   list.each { |item| createItemList item, cart }
   checkOutBill = createCheckOutBill cart
-  createTable checkOutBill
+  calc_bill checkOutBill
 end
 
 main 
