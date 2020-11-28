@@ -1,27 +1,27 @@
 def createItemList(item, cart)
   case item
     when 'milk'
-      if bill['milk'].nil?
-        bill['milk'] = 1
-      elsif bill['milk'] += 1
+      if cart['milk'].nil?
+        cart['milk'] = 1
+      elsif cart['milk'] += 1
       end
   
     when 'bread'
-      if bill['bread'].nil?
-        bill['bread'] = 1
-      elsif bill['bread'] += 1
+      if cart['bread'].nil?
+        cart['bread'] = 1
+      elsif cart['bread'] += 1
       end
   
     when 'apple'
-      if bill['apple'].nil?
-        bill['apple'] = 1
-      elsif bill['apple'] += 1
+      if cart['apple'].nil?
+        cart['apple'] = 1
+      elsif cart['apple'] += 1
       end
   
     when 'banana'
-      if bill['banana'].nil?
-        bill['banana'] = 1
-      elsif bill['banana'] += 1
+      if cart['banana'].nil?
+        cart['banana'] = 1
+      elsif cart['banana'] += 1
       end
     end
   end
