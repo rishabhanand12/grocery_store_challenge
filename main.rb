@@ -1,4 +1,4 @@
-@require_relative "item"
+require_relative "item"
 
 def main
   puts 'enter the list of items seperated by a comma'
