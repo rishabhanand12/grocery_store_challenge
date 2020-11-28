@@ -1,4 +1,4 @@
-@require_relative "item"
+require_relative "item"
 
 def createCheckOutBill(cart)
   items_in_cart = []
