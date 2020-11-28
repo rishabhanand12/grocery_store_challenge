@@ -1,4 +1,4 @@
-@require_relative "price"
+require_relative "price"
 
 $price_list = PriceTable.new.price_list
 
